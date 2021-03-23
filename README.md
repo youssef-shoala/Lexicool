@@ -29,12 +29,13 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 **Required Must-have Stories**
 
 * Ability to login or create a new profile
-* Shows a random word and its definition when you click a button
+* Gives the user a word and its definition to learn, when the user feels they have learned the word, they can click a button to get a new random word
 * Track previously learned words
 * Track user's daily streak
 * Send push notifications for reminders
-* Search for a word
-* 
+* Search for a word and get it's definition
+    * Search using microphone aswell
+* Shows a random word and its definition when you click a button
 
 **Optional Nice-to-have Stories**
 
@@ -46,32 +47,37 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 
 ### 2. Screen Archetypes
 
-* [list first screen here]
-   * [list associated required story here]
-   * ...
-* [list second screen here]
-   * [list associated required story here]
-   * ...
+* Login/Sign-up
+   * When the user first opens the app, prompt them to create a new account, or login if they already have one.
+* Learn Random Word
+    * Displays a random word and its definition.
+    * Has a button to generate a new word and indicate that the user has learned the first word
+* Search Word
+    * Search bar to search the definition of a word.
+* Profile
+    * Displays list of previously random words.
+    * Shows your daily streak number
+    * (Optional) Shows points and redeemable rewards
+    * Button to logout
 
-3. Navigation
-Tab Navigation (Tab to Screen)
+### 3. Navigation
 
-Learn Random Word
-Search Word
-Profile
-Flow Navigation (Screen to Screen)
+**Tab Navigation** (Tab to Screen)
 
-Login/Signup Screen
-Will lead to the Random Word page upon successful login
-Main Activity
-Has three tabs noted previously
+* Learn Random Word
+* Search Word
+* Profile
+
+**Flow Navigation** (Screen to Screen)
+
+* Login/Signup Screen
+   * Will lead to the Random Word page upon successful login
+* Main Activity
+   * Has three tabs noted previously
+
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
-<img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
-
-### [BONUS] Digital Wireframes & Mockups
-
-### [BONUS] Interactive Prototype
+<img src="https://github.com/yousss811/Lexicool/raw/main/wireframe.jpg" width=600>
 
 ## Schema 
 [This section will be completed in Unit 9]
