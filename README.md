@@ -53,23 +53,18 @@ Lexicool is an application designed to help you learn new words! Our app is simp
    * [list associated required story here]
    * ...
 
-### 3. Navigation
+3. Navigation
+Tab Navigation (Tab to Screen)
 
-**Tab Navigation** (Tab to Screen)
+Learn Random Word
+Search Word
+Profile
+Flow Navigation (Screen to Screen)
 
-* [fill out your first tab]
-* [fill out your second tab]
-* [fill out your third tab]
-
-**Flow Navigation** (Screen to Screen)
-
-* [list first screen here]
-   * [list screen navigation here]
-   * ...
-* [list second screen here]
-   * [list screen navigation here]
-   * ...
-
+Login/Signup Screen
+Will lead to the Random Word page upon successful login
+Main Activity
+Has three tabs noted previously
 ## Wireframes
 [Add picture of your hand sketched wireframes in this section]
 <img src="YOUR_WIREFRAME_IMAGE_URL" width=600>
