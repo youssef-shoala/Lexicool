@@ -33,7 +33,7 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 * Track previously learned words
 * Track user's daily streak
 * Send push notifications for reminders
-* Search for a word and get it's definition
+* Search for a word and get its definition
     * Search using microphone aswell
 * Shows a random word and its definition when you click a button
 
@@ -44,6 +44,7 @@ Lexicool is an application designed to help you learn new words! Our app is simp
     * Light theme, Dark theme
 * Friend System to see other's progress
 * Short question to make sure a user has learned the word correctly (given 4 definitions choose the correct one)
+* Delete account
 
 ### 2. Screen Archetypes
 
@@ -80,10 +81,49 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 <img src="https://github.com/yousss811/Lexicool/raw/main/wireframe.jpg" width=600>
 
 ## Schema 
-[This section will be completed in Unit 9]
 ### Models
-[Add table of models]
+**User**
+
+| Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | screenName        | String   | unique id for user|
+   | userId        | Pointer to User| User Id |
+   | streak         | Number   | Number of days of streak|
+   | password         | String   | Users password|
+   | oldWords         | Array   | Array of old words|
+
+**Word**
+
+   | Property      | Type     | Description |
+   | ------------- | -------- | ------------|
+   | wordId        | String   | unique id for word |
+   | definition    | Array    | Word definitions|
+   | shortDef      | Array    | Shorter definitions|
+   |synonyms       | Array    |List of synonyms|
+   |partOf         | Array    |Type of word (noun, verb, etc.)|
+
+     
+
 ### Networking
-- [Add list of network requests by screen ]
-- [Create basic snippets for each Parse network request]
-- [OPTIONAL: List endpoints if using existing API such as Yelp]
+
+* Learn Random Word
+    * (Read/GET) Get random word from dictionary API.
+    * (Read/GET) Get rest of information about the word.
+    * (Update/PUT) Update user's list of previously learned words.
+    * (Update/PUT) Update user's streak
+* Search Word
+    * (Read/GET) Get requested word from dictionary API.
+    * (Read/GET) Get rest of information about the word.
+* Profile
+    * (Read/GET) Get user's profile information (previously learned words, streak, screen name).
+    * (Update/Put) Change screen-name
+* Sign-up
+    * (Create/POST) Create new user model.
+* Login
+    * (Read/GET) Check if user credentials are correct
+
+ ```swift
+     let query = PFQuery(id:"word")
+     query.whereKey("id", equalTo: word)
+     query.findObjectsInBackground{ (def, fl, shortdef)}
+```
