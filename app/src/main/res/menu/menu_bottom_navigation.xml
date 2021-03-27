@@ -4,14 +4,18 @@
 
     <item
         android:id="@+id/action_profile"
+        android:icon="@drawable/ic_baseline_person_24"
         android:title="Profile"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_random"
+        android:icon="@drawable/ic_baseline_menu_book_24"
         android:title="Random Words"
         app:showAsAction="always" />
     <item
         android:id="@+id/action_search"
+        android:icon="@drawable/ic_baseline_search_24"
         android:title="Search"
+        android:visible="true"
         app:showAsAction="always" />
 </menu>
