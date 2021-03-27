@@ -32,6 +32,7 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 * Gives the user a word and its definition to learn, when the user feels they have learned the word, they can click a button to get a new random word
 * Track previously learned words
 * Track user's daily streak
+* Send push notifications for reminders
 * Search for a word and get its definition
     * Search using microphone aswell
 * Shows a random word and its definition when you click a button
@@ -39,7 +40,6 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 **Optional Nice-to-have Stories**
 
 * Different languages 
-* Send push notifications for reminders
 * Reward system with different themes
     * Light theme, Dark theme
 * Friend System to see other's progress
@@ -78,6 +78,10 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 
 ## Wireframes
 <img src="https://github.com/yousss811/Lexicool/blob/main/Assets/wireframe.jpg" width=600>
+
+
+### [BONUS] Interactive Prototype
+<img src="https://github.com/yousss811/Lexicool/blob/main/Assets/back4app.gif" width=200>
 
 ## Schema 
 ### Models
