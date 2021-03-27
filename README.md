@@ -79,6 +79,10 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 ## Wireframes
 <img src="https://github.com/yousss811/Lexicool/blob/main/Assets/wireframe.jpg" width=600>
 
+
+### [BONUS] Interactive Prototype
+<img src="https://github.com/yousss811/Lexicool/blob/main/Assets/back4app.gif" width=200>
+
 ## Schema 
 ### Models
 **User**
