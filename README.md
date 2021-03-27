@@ -137,3 +137,4 @@ Build Progress GIF's
 <img src="https://github.com/yousss811/Lexicool/blob/main/Assets/back4app.gif" width=200>
 
 *Set up navigation bar which screens will be implemented later
+<img src="https://github.com/yousss811/Lexicool/blob/main/Assets/bottomnav.gif" width=200>
