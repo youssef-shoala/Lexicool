@@ -2,60 +2,48 @@ package com.example.lexicoolapp.fragments;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.TextView;
 
+import com.codepath.asynchttpclient.AsyncHttpClient;
+import com.codepath.asynchttpclient.RequestHeaders;
+import com.codepath.asynchttpclient.RequestParams;
+import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
 import com.example.lexicoolapp.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link RandomFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+
+import okhttp3.Headers;
+
 public class RandomFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    // API Information
+    public static final String RANDOM_URL = "https://wordsapiv1.p.rapidapi.com/words/?hasDetails=definitions&random=true";
+    public static final String RANDOM_KEY = "1d252f1833mshff04d2c04b23255p1ae2b6jsnd3a066caaa16";
+    public static final String RANDOM_HOST = "wordsapiv1.p.rapidapi.com";
+    public static final String DEFINITION_URL = "https://wordsapiv1.p.rapidapi.com/words/";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private static final String TAG = "RandomFragment";
+    private TextView tvWord;
+    private TextView tvDefinition;
+    private Button btnRandom;
 
     public RandomFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment RandomFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static RandomFragment newInstance(String param1, String param2) {
-        RandomFragment fragment = new RandomFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -63,4 +51,68 @@ public class RandomFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_random, container, false);
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        tvWord = view.findViewById(R.id.tvWord);
+        tvDefinition = view.findViewById(R.id.tvDefinition);
+        btnRandom = view.findViewById(R.id.btnRandom);
+
+        btnRandom.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                Log.i(TAG, "New word button clicked");
+                getRandomWord();
+            }
+        });
+    }
+
+    private void getRandomWord() {
+
+        // API Client
+        AsyncHttpClient client = new AsyncHttpClient();
+        RequestHeaders headers = new RequestHeaders();
+        RequestParams params = new RequestParams();
+        headers.put("x-rapidapi-key", RANDOM_KEY);
+        headers.put("x-rapidapi-host", RANDOM_HOST);
+
+        client.get(RANDOM_URL, headers, params, new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int i, Headers headers, JSON json) {
+                Log.d(TAG, "API Success");
+                JSONObject jsonObject = json.jsonObject;
+                try {
+
+                    String word = jsonObject.getString("word");
+                    Log.d(TAG,"Word: " + word);
+                    JSONArray results = jsonObject.getJSONArray("results");
+                    JSONObject results2 = results.getJSONObject(0);
+                    updateDefinition(word, results2);
+                } catch (JSONException e) {
+                    Log.e(TAG, "Json Exception", e);
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int i, Headers headers, String s, Throwable throwable) {
+                Log.d(TAG, "API Failure: " + i);
+            }
+        });
+    }
+
+    private void updateDefinition(String word, JSONObject results2) {
+        try {
+            String definition = results2.getString("definition");
+            Log.d(TAG, "Definition: " + definition);
+            tvWord.setText(word);
+            tvDefinition.setText(definition);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
