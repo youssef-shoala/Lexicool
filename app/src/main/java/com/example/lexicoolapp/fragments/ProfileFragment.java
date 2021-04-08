@@ -12,12 +12,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.lexicoolapp.R;
+import com.parse.ParseUser;
 
 public class ProfileFragment extends Fragment {
 
     private ImageView ivProfile;
     private TextView tvUsername;
     private TextView tvCoins;
+    ParseUser user;
 
     public ProfileFragment() {
         // Required constructor
@@ -37,5 +39,7 @@ public class ProfileFragment extends Fragment {
         tvUsername = view.findViewById(R.id.tvUsername);
         tvCoins = view.findViewById(R.id.tvCoins);
 
+        user = ParseUser.getCurrentUser();
+        tvUsername.setText(user.getUsername());
     }
 }
