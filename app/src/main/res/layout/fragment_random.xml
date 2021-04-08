@@ -54,11 +54,11 @@
 
             <Button
                 android:id="@+id/btnRandom"
-                android:background="@android:color/white"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_marginLeft="100dp"
                 android:layout_marginRight="100dp"
+                android:background="@android:color/white"
                 android:forceDarkAllowed="false"
                 android:text="New Word"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large" />

@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.example.lexicoolapp.fragments.RandomFragment;
+import com.example.lexicoolapp.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.action_search:
                     default:
                         //Search fragment
-                        fragment = new RandomFragment();
+                        fragment = new SearchFragment();
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
