@@ -36,7 +36,7 @@
             <TextView
                 android:id="@+id/tvDefinition"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="275dp"
                 android:background="#DDD3FF"
                 android:lineSpacingExtra="8sp"
                 android:padding="20dp"
@@ -52,16 +52,19 @@
             android:background="#DDD3FF"
             android:orientation="vertical">
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btnRandom"
                 android:layout_width="match_parent"
                 android:layout_height="75dp"
                 android:layout_marginLeft="100dp"
                 android:layout_marginRight="100dp"
-                android:background="@android:color/white"
+                android:background="#D7FAFF"
                 android:forceDarkAllowed="false"
                 android:text="New Word"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                tools:visibility="visible" />
         </LinearLayout>
 
     </LinearLayout>
