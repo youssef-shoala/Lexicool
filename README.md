@@ -28,22 +28,22 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 
 **Required Must-have Stories**
 
-` [x] Ability to login or create a new profile
-` [x] Gives the user a word and its definition to learn, when the user feels they have learned the word, they can click a button to get a new random word
-` [ ] Track previously learned words
-` [ ] Track user's daily streak
-` [x] Search for a word and get its definition
-` [x] Shows a random word and its definition when you click a button
+- [x] Ability to login or create a new profile
+- [x] Gives the user a word and its definition to learn, when the user feels they have learned the word, they can click a button to get a new random word
+- [ ] Track previously learned words
+- [ ] Track user's daily streak
+- [x] Search for a word and get its definition
+- [x] Shows a random word and its definition when you click a button
 
 **Optional Nice-to-have Stories**
 
-` [ ] Different languages 
-` [ ] Send push notifications for reminders
-` [ ] Reward system with different themes
-    ` [ ] Light theme, Dark theme
-` [ ] Friend System to see other's progress
-` [ ] Short question to make sure a user has learned the word correctly (given 4 definitions choose the correct one)
-` [ ] Delete account
+- [ ] Different languages 
+- [ ] Send push notifications for reminders
+- [ ] Reward system with different themes
+    - [ ] Light theme, Dark theme
+- [ ] Friend System to see other's progress
+- [ ] Short question to make sure a user has learned the word correctly (given 4 definitions choose the correct one)
+- [ ] Delete account
 
 ### 2. Screen Archetypes
 
