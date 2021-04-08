@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.lexicoolapp.fragments.ProfileFragment;
 import com.example.lexicoolapp.fragments.RandomFragment;
 import com.example.lexicoolapp.fragments.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.action_profile:
                         //Profile fragment
-                        fragment = new RandomFragment();
+                        fragment = new ProfileFragment();
                         break;
                     case R.id.action_random:
                         //Random Word fragment
