@@ -140,3 +140,6 @@ Build Progress GIF's
 
 *Makes call to dictionary API to find random word and dispalays definition. Also, a tab to search for a word's definition.
 <img src="https://github.com/yousss811/Lexicool/blob/main/Assets/random_search.gif" width=200>
+
+*Sprint 2*
+<img src="https://github.com/yousss811/Lexicool/blob/main/Assets/walkthrough2.0.gif" width=200>
