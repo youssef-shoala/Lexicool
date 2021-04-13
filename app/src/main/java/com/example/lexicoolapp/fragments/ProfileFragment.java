@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.lexicoolapp.Coins;
 import com.example.lexicoolapp.LoginActivity;
 import com.example.lexicoolapp.MainActivity;
 import com.example.lexicoolapp.R;
@@ -48,6 +49,7 @@ public class ProfileFragment extends Fragment {
 
         user = ParseUser.getCurrentUser();
         tvUsername.setText(user.getUsername());
+        tvCoins.setText(String.valueOf(Coins.getCoins()));
 
         btnLogout.setOnClickListener(new View.OnClickListener() {
             @Override

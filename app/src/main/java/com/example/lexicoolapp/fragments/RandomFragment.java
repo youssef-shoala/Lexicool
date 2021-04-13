@@ -17,7 +17,9 @@ import com.codepath.asynchttpclient.AsyncHttpClient;
 import com.codepath.asynchttpclient.RequestHeaders;
 import com.codepath.asynchttpclient.RequestParams;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.example.lexicoolapp.Coins;
 import com.example.lexicoolapp.R;
+import com.parse.ParseUser;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,15 +60,20 @@ public class RandomFragment extends Fragment {
         tvDefinition = view.findViewById(R.id.tvDefinition);
         btnRandom = view.findViewById(R.id.btnRandom);
 
+        ParseUser user = ParseUser.getCurrentUser();
+
+
         btnRandom.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 Log.i(TAG, "New word button clicked");
                 getRandomWord();
+                Coins.setCoins((Coins.getCoins()+1));
             }
         });
     }
+
 
     private void getRandomWord() {
 
