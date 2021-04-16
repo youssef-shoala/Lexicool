@@ -31,7 +31,7 @@ Lexicool is an application designed to help you learn new words! Our app is simp
 - [x] Ability to login or create a new profile
 - [x] Gives the user a word and its definition to learn, when the user feels they have learned the word, they can click a button to get a new random word
 - [ ] Track previously learned words
-- [ ] Track user's daily streak
+- [x] Coin System to serve as rewards
 - [x] Search for a word and get its definition
 - [x] Shows a random word and its definition when you click a button
 
